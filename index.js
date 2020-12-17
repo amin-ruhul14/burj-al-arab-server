@@ -14,11 +14,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-var serviceAccount = require("./burz-al-araab-firebase-adminsdk-jwzxf-ad2fa1df46.json");
+var serviceAccount = require("./configs/burz-al-araab-firebase-adminsdk-jwzxf-ad2fa1df46.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://burz-al-araab.firebaseio.com"
+    databaseURL: process.env.FIRE_DB
 });
 
 
